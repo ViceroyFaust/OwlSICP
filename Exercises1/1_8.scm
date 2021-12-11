@@ -9,7 +9,7 @@
      expected))
 
 (define (good-enough? guess x)
-  (< (%error (cube guess) x) 1e-5))
+  (< (%error (cube guess) x) 1e-12))
 
 (define (average x y)
   (/ (+ x y) 2))

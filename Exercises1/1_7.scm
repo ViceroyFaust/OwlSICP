@@ -21,7 +21,7 @@
 ;; set arbitrary precision for both large
 ;; and small numbers
 (define (new-good-enough? guess x)
-  (< (%error (square guess) x) 0.001))
+  (< (%error (square guess) x) 1e-12))
 
 (define (average x y)
   (/ (+ x y) 2))
@@ -34,5 +34,6 @@
       guess
       (sqrt-iter (improve guess x) x)))
 
-(sqrt-iter 1.0 2)
+(sqrt-iter 1.0 1e-13)
 (sqrt-iter 1.0 0.000025)
+(sqrt-iter 1.0 12345678901234)
